@@ -3,7 +3,7 @@
 
 {% block scripts %}
     <!-- defer js script executed until pages loaded OR place script end of the contents-->
-    <!-- <script src="{% static 'posts/main.js' %}" defer></script> -->
+    <script src="{% static 'posts/main.js' %}" defer></script>
 {% endblock scripts %}
 
 {% block title %}
@@ -19,5 +19,5 @@ Hello World
 </ul>
 <div id="hello-world"></div>
 
-<script src="{% static 'posts/main.js' %}"></script>
+<!-- <script src="{% static 'posts/main.js' %}"></script> -->
 {% endblock content %}
