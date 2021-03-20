@@ -4,6 +4,7 @@ console.log('hello World!')
 
 const helloWorld = document.getElementById('hello-world');
 const postsBox = document.getElementById('posts-box')
+const spinnerBox = document.getElementById('spinner-box')
 
 // helloWorld.textContent = "Mochi Muffins"
 // helloWorld.innerHTML = "Mochi <b>Muffins</b>"
@@ -28,13 +29,18 @@ $.ajax({
         // const data = JSON.parse(response.data);
         // console.log(data);
         const data = response.data
-        console.log(data)
 
-        data.forEach(el => {
-            postsBox.innerHTML += `
-                ${el.title} - <b>${el.body}</b> - by ${el.author}<br>
-            `
-        });
+        setTimeout(() => {
+            spinnerBox.classList.add('not-visible')
+            console.log(data)
+
+            data.forEach(el => {
+                postsBox.innerHTML += `
+                    ${el.title} - <b>${el.body}</b> - by ${el.author}<br>
+                `
+            });
+        }, 1000)
+
     },
     error: function(error){
         console.log(error)
